@@ -1,0 +1,162 @@
+# if statement
+snippet if
+	if (${1}) begin
+		${0}
+	end
+# If/else statements
+snippet ife
+	if (${1}) begin
+		${2}
+	end
+	else begin
+		${3}
+	end
+# Else if statement
+snippet eif
+	else if (${1}) begin
+		${0}
+	end
+#Else statement
+snippet el
+	else begin
+		${0}
+	end
+# While statement
+snippet wh
+	while (${1}) begin
+		${0}
+	end
+# Repeat Loop
+snippet rep
+	repeat (${1}) begin
+		${0}
+	end
+# Case statement
+#	case (${1:/* variable */})
+snippet case
+	case (${1})
+		${2:/* value */}: begin
+			${3}
+		end
+		default: begin
+			${4}
+		end
+	endcase
+# Casez statement
+#	casez (${1:/* variable */})
+snippet casez
+	casez (${1})
+		${2:/* value */}: begin
+			${3}
+		end
+		default: begin
+			${4}
+		end
+	endcase
+# Combinational always block
+#	always @(${1:/* sensitive list */}) begin
+snippet al
+	always @* begin
+		${0}
+	end
+# Sequential always block with asynchronous reset
+snippet asr
+	always @(posedge clk or negedge rst_n) begin
+		if (~rst_n) begin
+			${0}
+		end
+		else if (${2}) begin
+			${3}
+		end
+	end
+# Sequential always block without asynchronous reset
+snippet as
+	always @(posedge clk) begin
+		if (${1}) begin
+			${3}
+		end
+	end
+# Module block
+snippet mod
+	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
+		${0}
+	endmodule
+# For
+snippet for
+	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
+		${4}
+	end
+# Forever
+snippet forev
+	forever begin
+		${0}
+	end
+# Function
+snippet fun
+	function ${1:void} ${2:name}(${3});
+		${0}
+	endfunction: $2
+# Task
+snippet task
+	task ${1:name}(${2});
+		${0}
+	endtask: $1
+# Initial 
+snippet ini
+	initial begin
+		${0}
+	end
+# typedef struct packed
+snippet tdsp
+	typedef struct packed {
+		int ${2:data};
+	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+# typedef eum
+snippet tde
+	typedef enum ${2:logic[15:0]}
+	{
+		${3:REG = 16'h0000}
+	} ${1:my_dest_t};
+# input wire
+snippet iw
+	input  wire          ${1:signal},
+# input wire vector
+snippet iW
+	input  wire  [${1:MSB}:0] ${2:signal},
+# output wire
+snippet ow
+	output wire          ${1:signal},
+# output wire vector
+snippet oW
+	output wire  [${1:MSB}:0] ${2:signal},
+# output reg
+snippet or
+	output reg           ${1:signal},
+# output reg vector
+snippet oR
+	output reg   [${1:MSB}:0] ${2:signal},
+# output logic
+snippet ol
+	output logic         ${1:signal},
+# output logic vector
+snippet oL
+	output logic [${1:MSB}:0] ${2:signal},
+# wire
+snippet w
+	wire  ${1:signal};
+# wire vector
+snippet W
+	wire  [${1:MSB}:0] ${2:signal};
+# reg 
+snippet r
+	reg   ${1:signal};
+# reg  vector
+snippet R
+	reg   [${1:MSB}:0] ${2:signal};
+# logic 
+snippet l
+	logic ${1:signal};
+# logic  vector
+snippet L
+	logic [${1:MSB}:0] ${2:signal};
+
